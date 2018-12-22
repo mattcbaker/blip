@@ -6,7 +6,7 @@
 [![Build Status](https://travis-ci.com/mattcbaker/blip.svg?token=YvkgqpiszGV5r7aytqLv&branch=master)](https://travis-ci.com/mattcbaker/blip)
 [![npm version](https://badge.fury.io/js/%40mattcbaker%2Fblip.svg)](https://badge.fury.io/js/%40mattcbaker%2Fblip)
 
-Blip is an attempt to make the world a better place with easier HTTP(S) transactions.
+Blip is making Node HTTP(S) transactions a little more pleasant.
 
 ### Install
 `npm i @mattcbaker/blip`
