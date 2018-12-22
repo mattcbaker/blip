@@ -15,7 +15,7 @@ Blip is making Node HTTP(S) transactions a little more pleasant.
 ```js
 const { request } = require('@mattcbaker/blip')
 
-// be sure to handle your errors!
+// be sure to handle your errors! :)
 const result = await request({ url: 'https://httpbin.org/get' })
 
 console.log(result.body.toString())
