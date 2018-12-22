@@ -1,6 +1,6 @@
 {
   "name": "@mattcbaker/blip",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "make the world a better place with easy http(s) transactions",
   "main": "src/index.js",
   "dependencies": {},
@@ -16,7 +16,8 @@
   },
   "keywords": [
     "http",
-    "https"
+    "https",
+    "blip"
   ],
   "author": "mattcbaker",
   "license": "MIT"
