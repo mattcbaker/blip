@@ -4,13 +4,38 @@
 
 Blip is an attempt to make the world a better place with easier HTTP(S) transactions.
 
-### Example!
-```
+### Example
+```js
 const { request } = require('@mattcbaker/blip')
 
 // be sure to handle your errors!
 const result = await request({ url: 'https://httpbin.org/get' })
+
+console.log(result.body.toString())
 ```
+
+### API
+**request**
+```js
+request({
+ url: 'https://httpbin.org/get',
+ headers: {
+  'User-Agent': 'Blip 1.0.0 https://github.com/mattcbaker/blip'
+ },
+ body: 'hi from Blip!',
+ method: 'POST'
+})
+```
+resulting response
+```js
+{
+ statusCode: 200,
+ headers: {...}
+ body: <Buffer ...>
+}
+```
+
+
 
 ### Blip has a few opinions (don't we all?)
 - The HTTP spec refers to message bodies as "body" and the Blip API reflects that.
