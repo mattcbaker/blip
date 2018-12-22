@@ -52,7 +52,7 @@ resulting response
  - **Why doesn't the API have methods for each HTTP verb, e.g. GET, POST, PUT?**
    - No doubt these convenience methods are handy. But, they aren't without a cost -- increasing the API surface. Blip has chosen to have as small an API surface as possible, so we've decided to forego those convenience methods.
  - **Why return a `Buffer` for the body?**
-   - This choice is rooted in the fact that Node is based on streams. The response body from an HTTP request is a stream, Blip tries to make your life a little easier by loading that stream into a buffer. If you'd like the `utf8` encoding of the body, [buffer.toString()](https://nodejs.org/api/buffer.html#buffer_buf_tostring_encoding_start_end) is a good choice.
+   - This choice is rooted in the fact that Node is based on streams. Node serves HTTP response bodies in streams, Blip tries to make your life a little easier by loading that stream into a buffer. If you'd like the `utf8` encoding of the body, [buffer.toString()](https://nodejs.org/api/buffer.html#buffer_buf_tostring_encoding_start_end) is your friend.
 
 ### License
 [MIT](LICENSE.md)
