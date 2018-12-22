@@ -78,3 +78,19 @@ describe('get', function () {
     })
   })
 })
+
+describe('post', function () {
+  describe('a typical post', function () {
+    let body = 'a-body-that-i-am-posting'
+    let responseBody = {}
+
+    before(async function () {
+      const result = await request({ url: 'https://httpbin.org/post', body, method: 'POST' })
+      responseBody = JSON.parse(result.body.toString())
+    })
+
+    it('should send the body to the server', function () {
+      assert.ok(responseBody.data === body, `Expected ${body}, got ${responseBody.data}`)
+    })
+  })
+})
