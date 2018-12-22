@@ -1,4 +1,3 @@
 language: node_js
-script:
-- npm install
-- npm test
+node_js:
+ -"node" #https://codepunk.io/travis-ci-uncaught-syntaxerror-use-of-const-in-strict-mode/
