@@ -1,0 +1,23 @@
+{
+  "name": "@mattcbaker/blip",
+  "version": "1.0.0",
+  "description": "make the world a better place with easy http(s) transactions",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  },
+  "scripts": {
+    "test": "mocha ./src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "fillmeinlater"
+  },
+  "keywords": [
+    "http",
+    "https"
+  ],
+  "author": "mattcbaker",
+  "license": "MIT"
+}
