@@ -25,18 +25,16 @@ console.log(result.body.toString())
 **request**
 ```js
 request({
- url: 'https://httpbin.org/get',
- headers: {
-  'User-Agent': 'Blip 1.0.0 https://github.com/mattcbaker/blip'
- },
- body: 'hi from Blip!',
- method: 'POST'
+ url: string,
+ headers: {...},
+ body: string,
+ method: string
 })
 ```
-resulting response
+and the response
 ```js
 {
- statusCode: 200,
+ statusCode: int,
  headers: {...}
  body: <Buffer ...>
 }
