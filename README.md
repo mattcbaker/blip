@@ -4,6 +4,9 @@
 
 Blip is an attempt to make the world a better place with easier HTTP(S) transactions.
 
+### Install
+`npm i @mattcbaker/blip`
+
 ### Example
 ```js
 const { request } = require('@mattcbaker/blip')
