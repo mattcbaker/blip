@@ -17,14 +17,14 @@ function request(message) {
     const protocol = parsedUrl.protocol === 'https:' ? https : http
 
     const request = protocol.request(options, (response) => {
-      let body = Buffer.alloc(0)
+      let body = []
 
       response.on('data', function (data) {
-        body = Buffer.concat([body, data])
+        body.push(data)
       })
 
       response.on('end', function () {
-        resolve({ statusCode: response.statusCode, body, headers: response.headers })
+        resolve({ statusCode: response.statusCode, body: Buffer.concat(body), headers: response.headers })
       })
     })
 
