@@ -98,18 +98,24 @@ describe('post', function () {
 })
 
 describe('config errors', () => {
-  it('should throw an error when message url has no protocol', async () => {
+  describe('when no protocol is specified in url', async () => {
     let error = {}
     const url = 'httpbin.org/get'
 
-    try {
-      await request({ url })
-    } catch (e) {
-      error = e
-    }
+    before(async function () {
+      try {
+        await request({ url })
+      } catch (e) {
+        error = e
+      }
+    })
 
     const expectedErrorMessage = `Protocol not specified in message.url (${url}). Url should begin with either 'http://' or 'https://'`
 
-    assert.strictEqual(error.message, expectedErrorMessage, 'Error message is not correct.')
+    it('should throw an error when message url has no protocol', () => assert.strictEqual(error.message, expectedErrorMessage, 'Error message is not correct.'))
+
+
   })
+
+
 })
