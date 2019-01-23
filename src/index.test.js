@@ -77,6 +77,8 @@ describe('get', function () {
       assert.ok(caughtError === true, 'Expected an error, got none.')
     })
   })
+
+
 })
 
 describe('post', function () {
@@ -92,5 +94,22 @@ describe('post', function () {
     it('should send the body to the server', function () {
       assert.ok(responseBody.data === body, `Expected ${body}, got ${responseBody.data}`)
     })
+  })
+})
+
+describe('config errors', () => {
+  it('should throw an error when message url has no protocol', async () => {
+    let error = {}
+    const url = 'httpbin.org/get'
+
+    try {
+      await request({ url })
+    } catch (e) {
+      error = e
+    }
+
+    const expectedErrorMessage = `Protocol not specified in message.url (${url}). Url should begin with either 'http://' or 'https://'`
+
+    assert.strictEqual(error.message, expectedErrorMessage, 'Error message is not correct.')
   })
 })

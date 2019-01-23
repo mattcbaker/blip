@@ -3,6 +3,12 @@ const https = require('https')
 const http = require('http')
 
 function request(message) {
+  const messageError = checkMessageForError(message)
+
+  if (messageError) {
+    return Promise.reject(new Error(messageError))
+  }
+
   let parsedUrl = url.parse(message.url)
 
   const options = {
@@ -38,6 +44,12 @@ function request(message) {
 
     request.end()
   })
+}
+
+function checkMessageForError(message) {
+  if (!message.url.startsWith('http://') && !message.url.startsWith('https://')) {
+    return `Protocol not specified in message.url (${message.url}). Url should begin with either 'http://' or 'https://'`
+  }
 }
 
 module.exports = { request }
