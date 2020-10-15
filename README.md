@@ -15,10 +15,14 @@ Blip is making Node HTTP(S) transactions a little more pleasant.
 ```js
 const { request } = require('@mattcbaker/blip')
 
-// be sure to handle your errors! :)
-const result = await request({ url: 'https://httpbin.org/get' })
+try {
+  const result = await request({ url: 'https://httpbin.org/get' })
 
-console.log(result.body.toString())
+  console.log(result.body.toString())
+} catch (error) {
+  // be sure to handle your errors! :)
+}
+
 ```
 
 ### API
