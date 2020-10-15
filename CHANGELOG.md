@@ -1,4 +1,7 @@
-1.0.5, 1/23/2019 (Current version)
+1.0.6, 10/15/2020 (Current version)
+* Throw an error if message argument is not of expected type.
+
+1.0.5, 1/23/2019
 * Throw an error if message.url has no protocol
 
 1.0.4, 1/16/2019
