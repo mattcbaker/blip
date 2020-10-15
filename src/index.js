@@ -47,6 +47,10 @@ function request(message) {
 }
 
 function checkMessageForError(message) {
+  if (typeof message !== 'object' || message === null) {
+    return `The 'message' argument provided to the 'request' function is not the expected object. Argument received: ${JSON.stringify(message)}`
+  }
+
   if (!message.url.startsWith('http://') && !message.url.startsWith('https://')) {
     return `Protocol not specified in message.url (${message.url}). Url should begin with either 'http://' or 'https://'`
   }

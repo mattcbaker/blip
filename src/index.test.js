@@ -113,9 +113,24 @@ describe('config errors', () => {
     const expectedErrorMessage = `Protocol not specified in message.url (${url}). Url should begin with either 'http://' or 'https://'`
 
     it('should throw an error when message url has no protocol', () => assert.strictEqual(error.message, expectedErrorMessage, 'Error message is not correct.'))
-
-
   })
+})
 
+describe('guard tests', () => {
+  describe('when http message argument is not the expected object', async () => {
+    let error = {}
+    const message = 'I am a string, not an object'
 
+    before(async function () {
+      try {
+        await request(message)
+      } catch (e) {
+        error = e
+      }
+    })
+
+    const expectedErrorMessage = `The 'message' argument provided to the 'request' function is not the expected object. Argument received: ${JSON.stringify(message)}`
+
+    it('should throw an error message argument is not of expected format.', () => assert.strictEqual(error.message, expectedErrorMessage, 'Error message is not correct.'))
+  })
 })
